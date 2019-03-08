@@ -15,43 +15,37 @@ app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 
 df = pd.read_csv('mtcars.tsv', sep='\t')
 
-
-
-mtcars_table = dash_table.DataTable(
-        id='table',
-        columns=[{"name": i, "id": i} for i in df.columns],
-        data=df.to_dict("rows"),
-        style_table={'overflowX': 'scroll'},
-)
-
 list_of_attributes = list(df.columns.values)
 list_of_attributes.remove('model')
-
 list_of_cars = list(df['model'])
 
 
 
 #Layout of the App
 app.layout = html.Div(children=[
-    html.H1(children='Motor Trend Car Road Tests'),
 
+    html.Div([
+        html.H1(children='Motor Trend Car Road Tests'),
+        html.P(children='The data was extracted from the 1974 Motor Trend US magazine, and comprises fuel consumption and 10 aspects of automobile design and performance for 32 automobiles (1973–74 models).', style={'maxWidth':750}),
+    ]),
 
-    #View individual car statistics
+    #View individual car statistics with a radar plot
     html.Div([
         html.H1(children='Select Your Ride'),
+        html.P(children='The radar plot shows shows you the overall performance of the selected car model. Note that some values have been scaled up or down in order to better illustrate the differences between models. To view the exact results please look at the table at the end of the page.', style={'maxWidth':750}),
         dcc.Dropdown(
             id='input-model',
             options=[{'label': i, 'value': i} for i in df['model']],
             value='Mazda RX4',
         ),
+        dcc.Graph(id='plot_radar'),
     ]),
 
-    #Radar plot of car
-    dcc.Graph(id='plot_radar'),
 
-    #Compare Car Attributes
+    #Compare Car Attributes with a bar chart against all models
     html.Div([
-        html.H1(children='Compare Statistics of Various Car models'),
+        html.H1(children='Results of Road Tests'),
+        html.P(children='The bar chart allows you to compare the attributes of all the models involved in the tests. You may select the attribute you want to compare with the dropdown menu.', style={'maxWidth':750}),
         dcc.Dropdown(
             id='input-attribute',
             options=[{'label': i, 'value': i} for i in list_of_attributes],
@@ -60,13 +54,19 @@ app.layout = html.Div(children=[
         dcc.Graph(id='plot-attribute'),
     ]),
 
+    #Table of Car Models
     html.H2(children='Table of Car Models'),
-    mtcars_table,
+    dash_table.DataTable(
+        id='table',
+        columns=[{"name": i, "id": i} for i in df.columns],
+        data=df.to_dict("rows"),
+        style_table={'overflowX': 'scroll'},
+    )
 
 ], style={'padding':64})
 
 
-#Update Radar Plot based on Model Selected
+#Callback for Radar Plot based on Model Selected
 @app.callback(
     dash.dependencies.Output('plot_radar', 'figure'),
     [Input(component_id='input-model', component_property='value')]
@@ -82,10 +82,10 @@ def update_output_div(input_value):
         polar = dict(
             radialaxis = dict(
                 visible = True,
-                range = [0, 55]
+                range = [0, 60]
             )
         ),
-        title=str(input_value)
+        title=str(input_value),
     )
     return {
         'data': data_model, 
@@ -115,7 +115,8 @@ def update_output_div(input_value):
                 xaxis= {'title': 'Model',
                         'type': 'category'},
                 yaxis={'title': str(input_value)},
-                hovermode='closest'
+                hovermode='closest',
+                title=str(input_value) + " for all car models"
             )
     }
 
