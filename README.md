@@ -1,7 +1,7 @@
 # mtcars
 Data visualization for Motor Trend Car Road Tests. This is a python app that uses the Dash visualization framework from plot.ly.
 
-#Getting Started
+## Getting Started
 You will need the following dependencies to run the app:
 dash
 dash_table
