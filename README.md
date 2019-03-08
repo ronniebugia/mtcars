@@ -1,6 +1,12 @@
 # Motor Trend Car Road Tests Visualization App
 Data visualization for Motor Trend Car Road Tests from https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/mtcars.html
 
+## About the App
+The app visualizes data from the Motor Trend Car Road Tests dataset available online. There is a radar plot assessing the performance of 
+the indvidual car models. You can choose the model being plotted from a dropdown menu. 
+
+There is also a bar chart comparing the attributes of each car model. You can choose the attribute being compared from another dropdown menu.
+
 ## Getting Started
 You will need the following dependencies to run the app:
 dash
