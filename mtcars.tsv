@@ -1,7 +1,3 @@
-# Name: Motor Trend Car Road Tests
-# Description: The data was extracted from the 1974 Motor Trend US magazine, and comprises fuel consumption and 10 aspects of automobile design and performance for 32 automobiles (1973--74 models). (from https://www.rdocumentation.org/packages/datasets/versions/3.5.1/topics/mtcars)
-# Source: https://gist.github.com/seankross/a412dfbd88b3db70b74b
-
 model	mpg	cyl	disp	hp	drat	wt	qsec	vs	am	gear	carb
 Mazda RX4	21	6	160	110	3.9	2.62	16.46	0	1	4	4
 Mazda RX4 Wag	21	6	160	110	3.9	2.875	17.02	0	1	4	4

@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+@import url('https://fonts.googleapis.com/css?family=Roboto Slab');
+
+
+body, h1,h3,h4,h5, a {
+    font-family: 'Roboto Slab', sans-serif;
+}
+
+h2, p{
+    font-family: 'Raleway', sans-serif;
+}
+
+body, html {
+    margin: 0;
+    background-image: url(/assets/background.jpg);
+    background-attachment: fixed; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover;
+}
