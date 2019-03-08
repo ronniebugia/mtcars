@@ -10,7 +10,7 @@ numpy
 plotly
 
 ## To Run the App
-Clone this repository on your computer cd into repository
+Clone this repository on your computer then cd into repository
 
 ```
 git clone https://github.com/ronniebugia/mtcars.git
