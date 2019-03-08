@@ -8,12 +8,12 @@ the indvidual car models. You can choose the model being plotted from a dropdown
 There is also a bar chart comparing the attributes of each car model. You can choose the attribute being compared from another dropdown menu.
 
 ## Getting Started
-You will need the following dependencies to run the app:
-dash
-dash_table
-pandas
-numpy
-plotly
+You will need the following dependencies to run the app: <br />
+dash <br />
+dash_table <br />
+pandas <br />
+numpy <br />
+plotly 
 
 ## To Run the App
 Clone this repository on your computer then cd into repository
@@ -37,13 +37,13 @@ python app.py
     
 ## Update History
 2019/03/07
-9:57pm PST
-New Additions
--Added Radar Plot showcasing attributes for car based on input from dropdown menu 
--Added bar graph comparing the attributes for models, the attribute is chosen from a dropdown menu
+9:57pm PST <br />
+New Additions <br />
+-Added Radar Plot showcasing attributes for car based on input from dropdown menu <br />
+-Added bar graph comparing the attributes for models, the attribute is chosen from a dropdown menu 
 
 ## Future Plans
-Planned future updates include
--Adding more cars to the dataset
+Planned future updates include <br />
+-Adding more cars to the dataset <br />
 -An image gallery to go along with dataset
 
