@@ -10,7 +10,15 @@ numpy
 plotly
 
 ## To Run the App
-To run the app clone this repository on your computer. Then install the dependncies using 
+Clone this repository on your computer cd into repository
+
+```
+git clone https://github.com/ronniebugia/mtcars.git
+cd mtcars
+```
+
+Install dependencies from requirements.txt
+
 ```
 pip install -r requirements.txt
 ```
